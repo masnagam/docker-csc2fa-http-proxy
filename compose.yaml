@@ -1,0 +1,31 @@
+services:
+  proxy:
+    image: $USER/csc2fa-http-proxy
+    build: .
+    init: true
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    ports:
+      - 5980:5980  # novpn
+      - 8118:8118  # proxy
+    environment:
+      TZ: Asia/Tokyo
+      # Enabling logging.
+      #CSC_LOGGING_OUTPUT: STDOUT
+    secrets:
+      - server-name
+      - server-ip
+      - username
+      - password
+
+secrets:
+  server-name:
+    file: ./server_name.txt
+  server-ip:
+    file: ./server_ip.txt
+  username:
+    file: ./username.txt
+  password:
+    file: ./password.txt
