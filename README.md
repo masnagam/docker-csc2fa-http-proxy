@@ -6,8 +6,8 @@
 
 ```shell
 echo vpn.server.name >server_name.txt
-echo resolvectl query $(cat server_name.txt) --json=short --type=A | \
-  jq -r '.address | join(".")' >server_addr.txt
+host $(cat server_name.txt) | grep "has address" | \
+  awk '{print $NF}' >server_ip.txt
 echo username >username.txt
 echo password >password.txt
 ```
