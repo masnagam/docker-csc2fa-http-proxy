@@ -33,5 +33,11 @@ EOF
 echo "INFO: Start vpnagentd"
 /opt/cisco/secureclient/bin/vpnagentd -execv_instance &
 
+if [ -e /tmp/.X99-lock ]
+then
+  echo "INFO: Remove /tmp/.X99-lock"
+  rm -f /tmp/.X99-lock
+fi
+
 echo "INFO: Start X11 session"
 exec gosu ubuntu sh /app/x11.sh
