@@ -24,15 +24,11 @@ xdotool search --sync --onlyvisible --name "$VPNUI_WM_NAME" \
         type "https://$SERVER_NAME"
 xdotool key Return
 
-sleep 1
-
 echo "INFO: Entering the username..."
 xdotool search --sync --onlyvisible --name "$VPNI_DIALOG_WM_NAME"  \
         windowactivate --sync \
         type "$USERNAME"
 xdotool key Return
-
-sleep 1
 
 echo "INFO: Entering the password..."
 xdotool search --sync --onlyvisible --name "$VPNI_DIALOG_WM_NAME" \
