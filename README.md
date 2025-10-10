@@ -6,8 +6,7 @@
 
 ```shell
 echo vpn.server.name >server_name.txt
-host $(cat server_name.txt) | grep "has address" | \
-  awk '{print $NF}' >server_ip.txt
+host $(cat server_name.txt) | grep "has address" | awk '{print $NF}' >server_ip.txt
 echo username >username.txt
 echo password >password.txt
 ```
@@ -21,7 +20,7 @@ Install an authenticator into your device:
 
 ## Cisco Secure Client
 
-Copy an archive file of [Cisco Secure Client 5] to use in this folder as `package.tar.gz`.  It must
+Copy an archive file of [Cisco Secure Client 5] in this folder as `package.tar.gz`.  It must
 contains the following scripts:
 
 * `<dir>/vpn/vpn_install.sh`
@@ -43,7 +42,7 @@ docker compose up -d
 The container starts an [Openbox] session.  The screen can be accessible by using a modern web
 browser via [noVNC] and [x11vnc].
 
-Open `http://localhost:5980/vnc_auto.html` in your web browser.  You an see that [xdotool] will
+Open `http://localhost:5980/vnc_auto.html` in your web browser.  You can see that [xdotool] will
 enter texts on the Cisco Secure Client window and dialog automatically instead of you.  Wait a
 moment for PIN code to be shown.
 
@@ -78,7 +77,12 @@ WM_NAME(STRING) = "Cisco Secure Client - Login"
 _NET_WM_NAME(UTF8_STRING) = "Cisco Secure Client - Login"
 ```
 
-# License
+## Links
+
+If you are looking for an L2TP IPsec-VPN container, see
+[masnagam/docker-l2tp-ipsec-http-proxy](https://github.com/masnagam/docker-l2tp-ipsec-http-proxy).
+
+## License
 
 [MIT](./LICENSE)
 
