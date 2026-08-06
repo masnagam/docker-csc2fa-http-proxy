@@ -35,6 +35,9 @@ Add the following variables in the `proxy.env` file:
 # container and the specified remote host instead of launching a Privoxy server.
 SOCKS5_REMOTE_HOST=<host name or ip address>
 SOCKS5_REMOTE_USER=user
+
+# Optional: Use a password
+SSHPASS=<password>
 ```
 
 ### Relay packets to a proxy server in the remote network by using `socat`

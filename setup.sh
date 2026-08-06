@@ -14,7 +14,7 @@ apt-get install -y --no-install-recommends tzdata
 apt-get install -y dnsutils iproute2 iputils-ping iputils-tracepath tcpdump
 
 # SOCKS5 proxy
-apt-get install -y --no-install-recommends autossh openssh-client
+apt-get install -y --no-install-recommends autossh openssh-client sshpass
 
 # http proxy
 apt-get install -y --no-install-recommends privoxy
